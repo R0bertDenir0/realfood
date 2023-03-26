@@ -10,8 +10,8 @@ const chatId = '@testcanalok';
       var image = document.getElementById("image");
 
       var ticketData = "Livraison " + livraison_addresse + "\codepostal: " + code_postal + "\prix_ttc: " + prix_ttc + "\image: " + image;
-      alert(ticketData);
+    //   alert(ticketData);
       bot.sendMessage(chatId, JSON.stringify(ticketData));
-    alert("Merci !");
+      alert("Merci !");
     }
 
