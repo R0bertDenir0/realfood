@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script type="text/javascript" src="./test.js"></script>
     <title>UberFunds</title>
 </head>
 <body>
@@ -16,20 +17,28 @@
     <input type="file" placerholder="test" id="image" name="image" />
     <p>Screen de ta commande</p>
     <!-- <button type="file">Screen de ta commande</button> -->
-    <button id="main_btn">Envoyer le ticket</button>
+    <button id="main_btn" onclick="submitForm()">Envoyer le ticket</button>
 
 </div>
 
 
 <script>
+
+const TelegramBot = require('node-telegram-bot-api');
+
+const bot = new TelegramBot('6111206700:AAGcVD0y_0GiUsB_E2Tllt26_IGZPuZ95Eg', { polling: false });
+const chatId = '@testcanalok';
+
     function submitForm() {
-      var restaurant = document.getElementById("restaurant_name").value;
-      var livraison = document.getElementById("livraison_addresse").value;
-      var prix = document.getElementById("subject").value;
-      var message = document.getElementById("message").value;
-      
-      var ticketData = "Name: " + restaurant + "\livraison: " + email + "\prix: " + subject + "\nMessage: " + message;
+      var livraison_addresse = document.getElementById("livraison_addresse").value;
+      var code_postal = document.getElementById("code_postal").value;
+      var prix_ttc = document.getElementById("prix_ttc").value;
+      var image = document.getElementById("image")
+
+      var ticketData = "Livraison " + livraison_addresse + "\codepostal: " + code_postal + "\prix_ttc: " + prix_ttc + "\image: " + image;
       alert(ticketData);
+      console.log(ticketData);
+      bot.sendMessage(chatId, JSON.stringify(ticketData));
     }
   </script>
 
