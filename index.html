@@ -7,18 +7,23 @@
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <!-- <script type="text/javascript" src="./test.js"></script> -->
     <!-- <script type="text/javascript" src="./button.js"></script> -->
+    <link rel="stylesheet" href="back.css">
     <script src="message.js"></script>
     <title>UberFunds</title>
 </head>
 <body>
     
 <div>
-    <input type="text" placeholder="Addresse de livraison" id="livraison_addresse" />
-    <input type="text" placeholder="Code postal" id="code_postal" />
-    <input type="text" placeholder="Prix TTC (livraison comprise)" id="prix_ttc" />
-    <input type="file" placerholder="test" id="image" name="image" />
-    <p>Screen de ta commande</p>
+    <input type="text" placeholder="Addresse de livraison" id="livraison_addresse" /> <br>
+
+    <input type="text" placeholder="Code postal" id="code_postal" /> <br>
+
+    <input type="text" placeholder="Prix TTC (livraison comprise)" id="prix_ttc" /> <br>
+    <!-- <input type="file" placerholder="test" id="image" name="image" />
+    <p>Screen de ta commande</p> -->
     <!-- <button type="file">Screen de ta commande</button> -->
+    
+    <p id="description"> Rajoutez un screen de votre commande par message </p>
     <button id="envoyer">Envoyer le ticket</button>
 
 </div>
@@ -37,17 +42,19 @@ let chatId = "@testcanalok";
 var livraison_addresse = document.getElementById("livraison_addresse").value;
       var code_postal = document.getElementById("code_postal").value;
       var prix_ttc = document.getElementById("prix_ttc").value;
-      var image = document.getElementById("image");
+      var image = document.getElementById("image").value;
 
-      var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc + "\ image: " + image;
+      var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc;
 
 let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${ticketData}`;
+let photo = `https://api.telegram.org/bot${apiToken}/sendPhoto?chat_id=${chatId}&`;
 
 let request = new XMLHttpRequest();
 request.open("GET", urlString);
+request.open("POST", photo);
 request.send();
 
-alert("Merci");
+alert("Merci pour votre commande!");
 
 let response = request.response;
 
