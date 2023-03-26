@@ -8,7 +8,7 @@
     <!-- <script type="text/javascript" src="./test.js"></script> -->
     <!-- <script type="text/javascript" src="./button.js"></script> -->
     <link rel="stylesheet" href="back.css">
-    <script src="message.js"></script>
+    <!-- <script src="message.js"></script> -->
     <title>UberFunds</title>
 </head>
 <body>
@@ -42,16 +42,16 @@ let chatId = "@testcanalok";
 var livraison_addresse = document.getElementById("livraison_addresse").value;
       var code_postal = document.getElementById("code_postal").value;
       var prix_ttc = document.getElementById("prix_ttc").value;
-      var image = document.getElementById("image").value;
+      var image = document.getElementById("image");
 
       var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc;
 
 let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${ticketData}`;
-let photo = `https://api.telegram.org/bot${apiToken}/sendPhoto?chat_id=${chatId}&`;
+// let photo = `https://api.telegram.org/bot${apiToken}/sendPhoto?chat_id=${chatId}&`;
 
 let request = new XMLHttpRequest();
 request.open("GET", urlString);
-request.open("POST", photo);
+// request.open("POST", photo);
 request.send();
 
 alert("Merci pour votre commande!");
