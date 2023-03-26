@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <title>UberFunds</title>
+</head>
+<body>
+    
+<div>
+    <input type="text" placeholder="Addresse de livraison" id="livraison_addresse" />
+    <input type="text" placeholder="Code postal" id="code_postal" />
+    <input type="text" placeholder="Prix TTC (livraison comprise)" id="prix_ttc" />
+    <input type="file" placerholder="test" id="image" name="image" />
+    <p>Screen de ta commande</p>
+    <!-- <button type="file">Screen de ta commande</button> -->
+    <button id="main_btn">Envoyer le ticket</button>
+
+</div>
+
+
+<script>
+    function submitForm() {
+      var restaurant = document.getElementById("restaurant_name").value;
+      var livraison = document.getElementById("livraison_addresse").value;
+      var prix = document.getElementById("subject").value;
+      var message = document.getElementById("message").value;
+      
+      var ticketData = "Name: " + restaurant + "\livraison: " + email + "\prix: " + subject + "\nMessage: " + message;
+      alert(ticketData);
+    }
+  </script>
+
+</body>
+</html>
