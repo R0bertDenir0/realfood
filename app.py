@@ -9,7 +9,7 @@ async def launch_web_ui(update: Update, callback: CallbackContext):
     kb = [
         [KeyboardButton("Create Ticket", web_app=WebAppInfo("https://w0rld3x.github.io/realfood/index.html"))]
     ]
-    await update.message.reply_text("Let's do this...", reply_markup=ReplyKeyboardMarkup(kb))
+    await update.message.reply_text("Appuie sur Créer ticket, et renseigne les informations en ajoutant un screen de ta commande ! Bon appétit :)", reply_markup=ReplyKeyboardMarkup(kb))
 
 
 if __name__ == '__main__':
