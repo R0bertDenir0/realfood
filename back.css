@@ -19,21 +19,21 @@ body {
 }
 
 #livraison_addresse {
-    margin: 20px 0;
+    margin: 5px 0;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
 #code_postal {
-    margin: 20px 0;
+    margin: 5px 0;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
 #prix_ttc {
-    margin: 20px 0;
+    margin: 5px 0;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -41,7 +41,7 @@ body {
 
 #pseudo {
 
-    margin: 20px 0;
+    margin: 5px 0;
     margin-left: auto;
     margin-right: auto;
     display: block;
