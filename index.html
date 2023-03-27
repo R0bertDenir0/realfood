@@ -29,32 +29,39 @@
 </div>
 
 <script>
-  
+const TelegramBot = require('telegram-bot-api');
+
+
 let envoyerButton = document.getElementById('envoyer');
 envoyerButton.addEventListener("click", function() {
-
+    
     console.log(envoyerButton);
+    
+    let apiToken = "6111206700:AAGcVD0y_0GiUsB_E2Tllt26_IGZPuZ95Eg";
+    let chatId = "@testcanalok";
 
-let apiToken = "6111206700:AAGcVD0y_0GiUsB_E2Tllt26_IGZPuZ95Eg";
-let chatId = "@testcanalok";
+    const bot = new TelegramBot(apiToken, {polling: true});
 
-// let text = "Hello world!";
-var livraison_addresse = document.getElementById("livraison_addresse").value;
+      var userId = message.user.id;
+
+      var livraison_addresse = document.getElementById("livraison_addresse").value;
       var code_postal = document.getElementById("code_postal").value;
       var prix_ttc = document.getElementById("prix_ttc").value;
       var image = document.getElementById("image");
 
-      var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc;
+      var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc + "\ Username: " + userId;
 
-let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${ticketData}`;
+    let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${ticketData}`;
 // let photo = `https://api.telegram.org/bot${apiToken}/sendPhoto?chat_id=${chatId}&`;
 
 let request = new XMLHttpRequest();
 request.open("GET", urlString);
-// request.open("POST", photo);
+
+
+// request.send(update);
 request.send();
 
-alert("Merci pour votre commande, un cuistot va vous répondre !");
+alert("Merci pour votre commande, un cuistot va vous contacter d'ici 5 minutes !");
 
 let response = request.response;
 
