@@ -39,6 +39,14 @@ body {
     display: block;
 }
 
+#pseudo {
+
+    margin: 20px 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 #envoyer {
     margin: 20px 0;
     margin-left: auto;

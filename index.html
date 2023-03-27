@@ -19,46 +19,46 @@
     <input type="text" placeholder="Code postal" id="code_postal" /> <br>
 
     <input type="text" placeholder="Prix TTC (livraison comprise)" id="prix_ttc" /> <br>
+
+
+    <input type="text" placeholder="Pseudo telegram" id="pseudo" /> <br>
     <!-- <input type="file" placerholder="test" id="image" name="image" />
     <p>Screen de ta commande</p> -->
     <!-- <button type="file">Screen de ta commande</button> -->
     
     <p id="description"> Rajoutez un screen de votre commande par message 🙏 </p>
+    <p id="description"> Nous vous contactons d'ici 5 minutes merci ! </p>
     <button id="envoyer">Envoyer le ticket</button>
 
 </div>
 
 <script>
-const TelegramBot = require('telegram-bot-api');
+
+// const TelegramBot = require('telegram-bot-api');
 
 
 let envoyerButton = document.getElementById('envoyer');
 envoyerButton.addEventListener("click", function() {
     
     console.log(envoyerButton);
-    
     let apiToken = "6111206700:AAGcVD0y_0GiUsB_E2Tllt26_IGZPuZ95Eg";
     let chatId = "@testcanalok";
 
-    const bot = new TelegramBot(apiToken, {polling: true});
-
-      var userId = message.user.id;
+    
 
       var livraison_addresse = document.getElementById("livraison_addresse").value;
       var code_postal = document.getElementById("code_postal").value;
       var prix_ttc = document.getElementById("prix_ttc").value;
-      var image = document.getElementById("image");
+      var pseudo = document.getElementById("pseudo").value;
 
-      var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc + "\ Username: " + userId;
+
+      var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc + "\ Username: @" + pseudo;
 
     let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${ticketData}`;
-// let photo = `https://api.telegram.org/bot${apiToken}/sendPhoto?chat_id=${chatId}&`;
+    // let photo = `https://api.telegram.org/bot${apiToken}/sendPhoto?chat_id=${chatId}&`;
 
 let request = new XMLHttpRequest();
 request.open("GET", urlString);
-
-
-// request.send(update);
 request.send();
 
 alert("Merci pour votre commande, un cuistot va vous contacter d'ici 5 minutes !");
