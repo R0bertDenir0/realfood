@@ -72,7 +72,7 @@ envoyerButton.addEventListener("click", function() {
       var pseudo = document.getElementById("pseudo").value;
 
 
-      var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc + "\ Username: @" + pseudo;
+      var ticketData = "Livraison " + livraison_addresse + "\ codepostal: " + code_postal + "\ prix_ttc: " + prix_ttc + "\ Username: @" + pseudo + "username:" + username;
 
     let urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${ticketData}`;
     // let photo = `https://api.telegram.org/bot${apiToken}/sendPhoto?chat_id=${chatId}&`;
