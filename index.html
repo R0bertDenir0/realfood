@@ -34,7 +34,26 @@
 
 <script>
 
-// const TelegramBot = require('telegram-bot-api');
+const TelegramBot = require('telegram-bot-api');
+const token = '6111206700:AAGcVD0y_0GiUsB_E2Tllt26_IGZPuZ95Eg';
+
+
+const bot = new TelegramBot(token, {polling: true});
+
+let username;
+let userId;
+let chatId;
+
+
+bot.on('callback_query', (callbackQuery) => {
+   chatId = callbackQuery.message.chat.id;
+   userId = callbackQuery.from.id;
+  bot.getChatMember(chatId, userId).then((chatMember) => {
+     username = chatMember.user.username;
+    console.log(`L'utilisateur ${username} a appuyé sur le bouton.`);
+  });
+});
+
 
 
 let envoyerButton = document.getElementById('envoyer');
@@ -44,6 +63,8 @@ envoyerButton.addEventListener("click", function() {
     let apiToken = "6111206700:AAGcVD0y_0GiUsB_E2Tllt26_IGZPuZ95Eg";
     let chatId = "@canalokfood";
 
+
+    
     
       var livraison_addresse = document.getElementById("livraison_addresse").value;
       var code_postal = document.getElementById("code_postal").value;
