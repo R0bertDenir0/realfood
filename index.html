@@ -8,7 +8,7 @@
     <!-- <script type="text/javascript" src="./test.js"></script> -->
     <!-- <script type="text/javascript" src="./button.js"></script> -->
     <link rel="stylesheet" href="back.css">
-    <!-- <script src="./getId.js"></script> -->
+    <script src="./getId.js"></script>
     <title>UberFunds</title>
 </head>
 <body>
@@ -32,27 +32,27 @@
 
 </div>
 
-<script>
+<!-- <script>
 
-const TelegramBot = require('telegram-bot-api');
+// const TelegramBot = require('telegram-bot-api');
 const token = '6111206700:AAGcVD0y_0GiUsB_E2Tllt26_IGZPuZ95Eg';
 
 
-const bot = new TelegramBot(token, {polling: true});
+// const bot = new TelegramBot(token, {polling: true});
 
-let username;
-let userId;
-let chatId;
+// let username;
+// let userId;
+// let chatId;
 
 
-bot.on('callback_query', (callbackQuery) => {
-   chatId = callbackQuery.message.chat.id;
-   userId = callbackQuery.from.id;
-  bot.getChatMember(chatId, userId).then((chatMember) => {
-     username = chatMember.user.username;
-    console.log(`L'utilisateur ${username} a appuyé sur le bouton.`);
-  });
-});
+// bot.on('callback_query', (callbackQuery) => {
+//    chatId = callbackQuery.message.chat.id;
+//    userId = callbackQuery.from.id;
+//   bot.getChatMember(chatId, userId).then((chatMember) => {
+//      username = chatMember.user.username;
+//     console.log(`L'utilisateur ${username} a appuyé sur le bouton.`);
+//   });
+// });
 
 
 
@@ -87,7 +87,7 @@ let response = request.response;
 
 });
 
-</script>
+</script> -->
 
 </body>
 </html>

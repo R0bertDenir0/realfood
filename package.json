@@ -1,0 +1,23 @@
+{
+  "name": "webappbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "button.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/W0rld3x/realfood.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/W0rld3x/realfood/issues"
+  },
+  "homepage": "https://github.com/W0rld3x/realfood#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
